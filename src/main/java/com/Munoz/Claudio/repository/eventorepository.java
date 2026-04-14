@@ -7,16 +7,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class eventorepository {
-    private List<eventos> events = new ArrayList<>();
+    private List<evento> events = new ArrayList<>();
 
-    public List<eventos> getAllEvents() {
+    public List<evento> getAllEvents() {
         return events;
     }
-    public void addEvent(eventos event) {
+    public void addEvent(evento event) {
         events.add(event);
     }
-
-    public void deleteEvent(int id) {
-        events.removeIf(event -> event.getId() == id);
-    }
+    
 }
