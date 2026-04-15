@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 
 @Service
-public class EventoService {
+public class eventoService {
 @Autowired private eventorepository eventorepository;
 
 public List<Evento> create(Evento evento) {
@@ -20,10 +20,24 @@ public List<Evento> create(Evento evento) {
 }
 
 public List<Evento> readAll() {
-    return eventorepository.leertodos();
+    return eventorepository.leertodo();
+}
+private void seed() {
+    eventorepository.seed();
+
 }
 
+public boolean delete(int id) {
+    
+if (eventorepository.deleteEvent(id)) {
+    return "Evento eliminado correctamente"; 
+}
 
+    return "Error al eliminar el evento"; 
+}
 
+public Evento update(int id, Evento evento) {
+    return eventorepository.modificarEvento(id, evento);
+}
 
 }

@@ -31,6 +31,6 @@ public class eventorepository {
                 return actualizadoEvento;
             }
         }
-        return null; // No se encontró el evento
+        return null; 
     }
 }
