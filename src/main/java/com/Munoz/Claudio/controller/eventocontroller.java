@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 
@@ -41,6 +44,13 @@ public List<Evento> getEventos() {
     return eventoService.readAll();
 }
 
+
+@PutMapping("{id}")
+public Evento putEvento(@PathVariable String id, @RequestBody Evento entity) {
+    //TODO: process PUT request
+    
+    return eventoService.update(id, entity);
+}
 
 
 }
